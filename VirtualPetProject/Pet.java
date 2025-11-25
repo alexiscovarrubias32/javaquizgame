@@ -40,7 +40,6 @@ public abstract class Pet {
         this.happiness = Math.max(0, Math.min(100, happiness));
     }
 
-
     // OOP Polymorphism - each pet behaves differently
     public abstract void eat();
     public abstract void play();

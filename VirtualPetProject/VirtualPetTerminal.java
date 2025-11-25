@@ -18,17 +18,17 @@ public class VirtualPetTerminal {
 
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                scanner.nextLine(); // clear leftover newline
+                scanner.nextLine(); 
 
                 if (choice >= 1 && choice <= 3) {
-                    break; // valid
+                    break; 
                 } else {
                     System.out.println("Please enter 1, 2, or 3.\n");
                 }
 
             } else {
                 System.out.println("Invalid input. Please enter a number.\n");
-                scanner.nextLine(); // clear invalid input
+                scanner.nextLine(); 
             }
         }
 

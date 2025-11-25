@@ -59,8 +59,26 @@ public class VirtualPetTerminal {
             System.out.println("3. Sleep");
             System.out.println("4. Exit");
 
-            System.out.print("Your choice: ");
-            action = scanner.nextInt();
+            while (true) {
+                System.out.print("Your choice: ");
+
+                if (!scanner.hasNextInt()) {
+                    System.out.println("❌ Invalid input. Please enter a number 1-4.\n");
+                    scanner.nextLine(); 
+                    continue;
+                }
+
+                action = scanner.nextInt();
+                scanner.nextLine(); 
+
+                if (action < 1 || action > 4) {
+                    System.out.println("❌ Please enter a number between 1 and 4.\n");
+                    continue;
+                }
+
+                break; 
+            }
+
 
             switch (action) {
                 case 1:

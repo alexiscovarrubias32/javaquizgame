@@ -40,12 +40,6 @@ public abstract class Pet {
         this.happiness = Math.max(0, Math.min(100, happiness));
     }
 
-    public void showStatus() {
-        System.out.println("\n🐾 " + name + "'s Status:");
-        System.out.println("Hunger: " + hunger);
-        System.out.println("Energy: " + energy);
-        System.out.println("Happiness: " + happiness);
-    }
 
     // OOP Polymorphism - each pet behaves differently
     public abstract void eat();

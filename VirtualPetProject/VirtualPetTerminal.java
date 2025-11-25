@@ -93,8 +93,6 @@ public class VirtualPetTerminal {
                 case 4:
                     System.out.println("👋 Bye! Thanks for playing.");
                     break;
-                default:
-                    System.out.println("❌ Invalid choice!");
             }
         }
 

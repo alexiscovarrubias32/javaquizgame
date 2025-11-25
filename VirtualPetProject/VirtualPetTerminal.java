@@ -10,20 +10,37 @@ public class VirtualPetTerminal {
         System.out.println("🐾 Welcome to Terminal Virtual Pet!");
 
         // Choose pet
-        System.out.println("Choose your pet: 1. Dog  2. Cat  3. Dragon");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = 0;
+        
+        while (true) {
+            System.out.println("Choose your pet: 1. Dog  2. Cat  3. Dragon");
+            System.out.print("Your choice: ");
 
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // clear leftover newline
+
+                if (choice >= 1 && choice <= 3) {
+                    break; // valid
+                } else {
+                    System.out.println("Please enter 1, 2, or 3.\n");
+                }
+
+            } else {
+                System.out.println("Invalid input. Please enter a number.\n");
+                scanner.nextLine(); // clear invalid input
+            }
+        }
+
+        // Now ask for name
         System.out.print("Give your pet a name: ");
         String name = scanner.nextLine();
 
+        // Create selected pet
         switch (choice) {
             case 1: pet = new Dog(name); break;
             case 2: pet = new Cat(name); break;
             case 3: pet = new Dragon(name); break;
-            default:
-                System.out.println("Invalid choice. Defaulting to Dog.");
-                pet = new Dog(name);
         }
 
         int action = 0;
